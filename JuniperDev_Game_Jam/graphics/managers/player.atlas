@@ -1,0 +1,4 @@
+images {
+  image: "/graphics/placeholderPlayer.png"
+}
+extrude_borders: 2
