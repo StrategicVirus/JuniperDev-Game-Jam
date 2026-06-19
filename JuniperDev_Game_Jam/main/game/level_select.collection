@@ -1,0 +1,12 @@
+name: "level_select"
+scale_along_z: 0
+embedded_instances {
+  id: "controller"
+  data: "embedded_components {\n"
+  "  id: \"level_1_proxy\"\n"
+  "  type: \"collectionproxy\"\n"
+  "  data: \"collection: \\\"/main/game/levels/level_1.collection\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}

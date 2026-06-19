@@ -1,0 +1,35 @@
+local upForce = 100
+local updated_position = vmath.vector3()
+function init(self)
+	msg.post(".", "acquire_input_focus")
+end
+
+function final(self)
+	msg.post(".", "release_input_focus")
+end
+
+function update(self, dt)
+	local pos=go.get_position()
+	
+	updated_position.x = pos.x + upForce*dt
+
+	if updated_position.x > 720 then
+		updated_position.x = 720
+	end
+	go.set_position(pos + updated_position)
+	upForce = upForce - 1
+	print(upForce)
+end
+
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("player_spin") then
+		upForce=upForce+10
+	end
+end

@@ -1,13 +1,14 @@
 [bootstrap]
-main_collection = /main/main.collectionc
+main_collection = /main/collections and controllers/collections/main.collectionc
 
 [script]
 shared_state = 1
 
 [display]
-width = 960
-height = 640
+width = 1280
+height = 720
 high_dpi = 1
+fullscreen = 0
 
 [android]
 input_method = HiddenInputField
