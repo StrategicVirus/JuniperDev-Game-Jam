@@ -12,4 +12,18 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("proxy_loaded") then
 		msg.post(sender, "enable")
 	end
+	if message_id == hash("restart") then
+		msg.post(self.collection, "unload")
+		msg.post(self.collection, "load")
+	end
+	if message_id == hash("next_level") and self.collection == "#level_1_proxy" then
+		msg.post(self.collection, "unload")
+		self.collection = "#level_2_proxy"
+		msg.post(self.collection, "load")
+	end
+	if message_id == hash("next_level") and self.collection == "#level_2_proxy" then
+		msg.post(self.collection, "unload")
+		self.collection = "#level_3_proxy"
+		msg.post(self.collection, "load")
+	end
 end

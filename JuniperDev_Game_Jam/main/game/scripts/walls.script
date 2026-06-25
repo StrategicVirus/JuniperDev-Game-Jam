@@ -1,4 +1,4 @@
-local speed = -30
+local speed = -70
 function init(self)
 	msg.post(".", "acquire_input_focus")
 end
@@ -15,7 +15,9 @@ end
 
 
 function on_message(self, message_id, message, sender)
-	
+	if message_id == hash("contact_point_response") then
+		print("contact")
+	end
 end
 
 function on_input(self, action_id, action)

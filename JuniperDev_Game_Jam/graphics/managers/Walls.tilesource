@@ -1,8 +1,8 @@
-image: "/graphics/placeholderWallSheet.png"
-tile_width: 16
-tile_height: 16
-tile_spacing: 1
-collision: "/graphics/placeholderWallSheet.png"
+image: "/graphics/WallSpriteSheet32x32.png"
+tile_width: 32
+tile_height: 32
+tile_spacing: 4
+collision: "/graphics/WallSpriteSheet32x32.png"
 convex_hulls {
   index: 0
   count: 4
@@ -15,7 +15,7 @@ convex_hulls {
 }
 convex_hulls {
   index: 10
-  count: 6
+  count: 7
   collision_group: "wall"
 }
 collision_groups: "wall"
@@ -25,3 +25,4 @@ animations {
   end_tile: 1
 }
 extrude_borders: 2
+sprite_trim_mode: SPRITE_TRIM_MODE_8

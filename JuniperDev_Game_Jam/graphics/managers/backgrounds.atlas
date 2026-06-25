@@ -1,0 +1,4 @@
+images {
+  image: "/graphics/origbig.png"
+}
+extrude_borders: 2
