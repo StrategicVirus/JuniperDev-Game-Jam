@@ -1,0 +1,27 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.collection = "#title_proxy"
+	msg.post(self.collection, "load")
+end
+
+function final(self)
+	msg.post(".", "release_input_focus")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "enable")
+	end
+	
+	if message_id == hash("game_start") then
+		msg.post(self.collection, "unload")
+		self.collection = "#game_proxy"
+		msg.post(self.collection, "load")
+	end
+
+	if message_id == hash("title") then
+		msg.post(self.collection, "unload")
+		self.collection = "#title_proxy"
+		msg.post(self.collection, "load")
+	end
+end

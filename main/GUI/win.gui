@@ -1,0 +1,75 @@
+fonts {
+  name: "default"
+  font: "/builtins/fonts/default.font"
+}
+textures {
+  name: "backgrounds"
+  texture: "/graphics/managers/backgrounds.atlas"
+}
+nodes {
+  position {
+    x: 298.0
+    y: 248.0
+  }
+  type: TYPE_BOX
+  texture: "backgrounds/ButtonSprite300x150"
+  id: "continue"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 6.0
+    y: 6.0
+  }
+  scale {
+    x: 4.0
+    y: 4.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Continue\n"
+  ""
+  font: "default"
+  id: "text"
+  parent: "continue"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 978.0
+    y: 249.0
+  }
+  type: TYPE_BOX
+  texture: "backgrounds/ButtonSprite300x150"
+  id: "title"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 6.0
+    y: 6.0
+  }
+  scale {
+    x: 4.0
+    y: 4.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Title\n"
+  "\n"
+  ""
+  font: "default"
+  id: "text1"
+  parent: "title"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
