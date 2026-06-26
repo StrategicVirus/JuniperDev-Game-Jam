@@ -1,13 +1,5 @@
-name: "title_screen"
+name: "Win"
 scale_along_z: 0
-embedded_instances {
-  id: "GUI"
-  data: "components {\n"
-  "  id: \"title\"\n"
-  "  component: \"/main/GUI/title.gui\"\n"
-  "}\n"
-  ""
-}
 embedded_instances {
   id: "background"
   data: "embedded_components {\n"

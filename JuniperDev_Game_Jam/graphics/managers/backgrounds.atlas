@@ -1,4 +1,7 @@
 images {
   image: "/graphics/origbig.png"
 }
+images {
+  image: "/graphics/ButtonSprite300x150.png"
+}
 extrude_borders: 2

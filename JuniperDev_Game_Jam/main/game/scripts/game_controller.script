@@ -9,21 +9,40 @@ function final(self)
 end
 
 function on_message(self, message_id, message, sender)
+	
 	if message_id == hash("proxy_loaded") then
 		msg.post(sender, "enable")
 	end
+	
 	if message_id == hash("restart") then
 		msg.post(self.collection, "unload")
 		msg.post(self.collection, "load")
+		
 	end
-	if message_id == hash("next_level") and self.collection == "#level_1_proxy" then
+	if message_id == hash("next_level") then
 		msg.post(self.collection, "unload")
-		self.collection = "#level_2_proxy"
-		msg.post(self.collection, "load")
+		
+		if self.collection == "#level_1_proxy" then
+			self.collection = "#level_2_proxy"
+			
+		elseif self.collection == hash("#level_2_proxy") then
+			self.collection = "#level_3_proxy"
+			
+		elseif self.collection == hash("#level_3_proxy") then
+			self.collection = "title"
+		end
+		
+		msg.post("#win_proxy", "load")
 	end
-	if message_id == hash("next_level") and self.collection == "#level_2_proxy" then
-		msg.post(self.collection, "unload")
-		self.collection = "#level_3_proxy"
-		msg.post(self.collection, "load")
+
+	if message_id == hash("continue") then
+		msg.post("#win_proxy", "unload")
+		
+		if self.collection ~= "title" then
+			msg.post(self.collection, "load")
+			
+		else
+			msg.post("level_select:/controller", "next_level")
+		end
 	end
 end
