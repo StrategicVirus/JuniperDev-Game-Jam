@@ -1,7 +1,0 @@
-images {
-  image: "/graphics/placeholderPlayer.png"
-}
-images {
-  image: "/graphics/PlayerSprite32x32.png"
-}
-extrude_borders: 2
